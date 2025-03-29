@@ -60,6 +60,7 @@ def main(args):
     yhat_test = model.predict(X_test)
     
     # Step 7: Log the MSE metric in MLflow for model evaluation, and save the trained model to the specified output path.
+    mse = mean_squared_error(y_test, yhat_test)
     print('Mean Squared Error of RandomForest Regressor on test set: {:.2f}'.format(mse))
     mlflow.log_metric("MSE", float(mse))
 
