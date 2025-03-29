@@ -42,10 +42,10 @@ def main(args):
     test_df = pd.read_csv(Path(args.test_data)/"test.csv")
     
     # Step 3: Split the data into features (X) and target (y) for both train and test datasets. Specify the target column name.
-    y_train = train_df['Failure']
-    X_train = train_df.drop(columns=['Failure'])
-    y_test = test_df['Failure']
-    X_test = test_df.drop(columns=['Failure'])
+    y_train = train_df['Price']
+    X_train = train_df.drop(columns=['Price'])
+    y_test = test_df['Price']
+    X_test = test_df.drop(columns=['Price'])
     
     # Step 4: Initialize the RandomForest Regressor with specified hyperparameters, and train the model using the training data.
     model = RandomForestRegressor(n_estimators=args.n_estimators, max_depth=args.max_depth, random_state=42)
